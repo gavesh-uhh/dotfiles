@@ -21,6 +21,15 @@ hl.on("hyprland.start", function()
     hl.exec_cmd(terminal)
     hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper")
+
+    -- Autostart Spotify and Discord on Workspace 2
+    hl.exec_cmd("spotify &")
+    hl.exec_cmd("discord &")
+
+    hl.exec_cmd("sleep 3 && hyprctl dispatch movetoworkspace 2,class:^(spotify)$")
+    hl.exec_cmd("sleep 3 && hyprctl dispatch movetoworkspace 2,class:^(discord)$")
+
+    hl.exec_cmd("hyprctl dispatch workspace 1")
 end)
 
 hl.config({
