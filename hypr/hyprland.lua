@@ -21,15 +21,18 @@ hl.on("hyprland.start", function()
     hl.exec_cmd(terminal)
     hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("hypridle")
+    hl.exec_cmd("nm-applet --indicator")
 
-    -- Autostart Spotify and Discord on Workspace 2
-    hl.exec_cmd("spotify &")
-    hl.exec_cmd("discord &")
+    hl.exec_cmd("spotify", {
+        workspace = "2 silent"
+    })
 
-    hl.exec_cmd("sleep 3 && hyprctl dispatch movetoworkspace 2,class:^(spotify)$")
-    hl.exec_cmd("sleep 3 && hyprctl dispatch movetoworkspace 2,class:^(discord)$")
+    hl.exec_cmd("discord", {
+        workspace = "2 silent"
+    })
 
-    hl.exec_cmd("hyprctl dispatch workspace 1")
+    hl.exec_cmd("sleep 2 && hyprctl dispatch workspace 1")
 end)
 
 hl.config({
@@ -184,3 +187,12 @@ hl.bind(mainMod .. " + SHIFT + P",
     hl.dsp.exec_cmd(screenshot_full)
 )
 
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 5%+"), { repeating = true, locked = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { repeating = true, locked = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true, locked = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true, locked = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ toggle-mute"), { repeating = true, locked = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SOURCE@ toggle-mute"), { repeating = true, locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
