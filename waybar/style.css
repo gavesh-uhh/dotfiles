@@ -1,0 +1,71 @@
+/* ~/.config/waybar/style.css */
+* {
+    font-family: "JetBrainsMono Nerd Font", "Ubuntu Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: transparent; /* Makes the bar float on your wallpaper */
+}
+
+/* Individual Pill Style Blocks */
+#workspaces,
+#window,
+#clock,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#battery,
+#tray {
+    background-color: rgba(30, 30, 46, 0.75); 
+    color: #cdd6f4;
+    padding: 2px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Focused Workspace Accent */
+#workspaces button {
+    padding: 0 5px;
+    color: #585b70;
+}
+
+#workspaces button.active {
+    color: #cba6f7; /* Lavender active color */
+}
+
+#workspaces button.urgent {
+    color: #f38ba8; /* Red alert */
+}
+
+/* Center Clock Accent */
+#clock {
+    color: #89b4fa; /* Soft Blue accent */
+    background: linear-gradient(45deg, rgba(30,30,46,0.85), rgba(17,17,27,0.85));
+}
+
+/* Hardware Status Warnings */
+#battery.warning {
+    color: #fab387;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #f38ba8;
+        color: #11111b;
+    }
+}
+

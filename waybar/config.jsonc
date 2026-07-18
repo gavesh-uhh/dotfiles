@@ -1,0 +1,68 @@
+// ~/.config/waybar/config.jsonc
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 10,
+    "margin-left": 15,
+    "margin-right": 15,
+    "spacing": 8,
+
+    // Choose the modules for each side
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "memory", "battery", "tray"],
+
+    // Module Specific Rules
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "active-only": false,
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 30,
+        "separate-outputs": true
+    },
+
+    "clock": {
+        "timezone": "auto",
+        "format": "  {:%H:%M   %a, %b %d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "memory": {
+        "format": "RAM {percentage}%",
+        "interval": 2
+    },
+
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "   Wire",
+        "format-disconnected": "   Disc",
+        "tooltip-format-wifi": "Signal Strength: {signaldBm}dBm"
+    },
+
+    "pulseaudio": {
+        "format": "  {volume}%",
+        "format-muted": "  Muted",
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "  {capacity}%",
+        "format-charging": "󱐋 {capacity}%"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    }
+}
+
