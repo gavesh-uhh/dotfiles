@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-    background: transparent; /* Makes the bar float on your wallpaper */
+    background: transparent;
 }
 
 /* Individual Pill Style Blocks */
@@ -16,12 +16,13 @@ window#waybar {
 #window,
 #clock,
 #pulseaudio,
+#pulseaudio.microphone,
 #network,
 #cpu,
 #memory,
 #battery,
 #tray {
-    background-color: rgba(30, 30, 46, 0.75); 
+    background-color: rgba(30, 30, 46, 0.75);
     color: #cdd6f4;
     padding: 2px 10px;
     border-radius: 12px;
@@ -33,26 +34,37 @@ window#waybar {
     padding: 0 5px;
     color: #585b70;
 }
-
 #workspaces button.active {
-    color: #cba6f7; /* Lavender active color */
+    color: #cba6f7;
 }
-
 #workspaces button.urgent {
-    color: #f38ba8; /* Red alert */
+    color: #f38ba8;
 }
 
 /* Center Clock Accent */
 #clock {
-    color: #89b4fa; /* Soft Blue accent */
+    color: #89b4fa;
     background: linear-gradient(45deg, rgba(30,30,46,0.85), rgba(17,17,27,0.85));
+}
+
+/* Speaker Muted State */
+#pulseaudio.muted {
+    color: #f38ba8;
+    background-color: rgba(243, 139, 168, 0.15);
+    border: 1px solid rgba(243, 139, 168, 0.4);
+}
+
+/* Mic Muted State */
+#pulseaudio.microphone.source-muted {
+    color: #f38ba8;
+    background-color: rgba(243, 139, 168, 0.15);
+    border: 1px solid rgba(243, 139, 168, 0.4);
 }
 
 /* Hardware Status Warnings */
 #battery.warning {
     color: #fab387;
 }
-
 #battery.critical:not(.charging) {
     color: #f38ba8;
     animation-name: blink;
@@ -61,11 +73,9 @@ window#waybar {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
 @keyframes blink {
     to {
         background-color: #f38ba8;
         color: #11111b;
     }
 }
-
