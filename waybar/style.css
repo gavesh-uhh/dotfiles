@@ -65,6 +65,16 @@ window#waybar {
 #battery.warning {
     color: #fab387;
 }
+
+#mpris {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#mpris.spotify {
+    color: #1DB954;
+}
+
 #battery.critical:not(.charging) {
     color: #f38ba8;
     animation-name: blink;
