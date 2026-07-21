@@ -28,7 +28,10 @@
 	    "player-icons": {
 		    "spotify": ""
 	    },
-	    "max-length": 40
+	    "max-length": 40,
+	    "on-click": "playerctl play-pause",
+	    "on-scroll-up": "playerctl next",
+	    "on-scroll-down": "playerctl previous"
     },
     "clock": {
 	    "timezone": "auto",
@@ -41,8 +44,8 @@
     },
     "network": {
 	    "format-wifi": "  {essid}",
-	    "format-ethernet": "   Wire",
-	    "format-disconnected": "   Disc",
+	    "format-ethernet": "󰈀  Wired",
+	    "format-disconnected": "󰤭  Offline",
 	    "tooltip-format-wifi": "Signal Strength: {signaldBm}dBm"
     },
     "pulseaudio": {
