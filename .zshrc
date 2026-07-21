@@ -60,3 +60,8 @@ export VISUAL=nano
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 
 source /usr/share/nvm/init-nvm.sh
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/gav/.local/bin:$PATH"
+export PATH="/home/gav/.local/bin:$PATH"

@@ -31,6 +31,7 @@ hl.on("hyprland.start", function()
 
     hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("dunst")
 
     hl.exec_cmd("sleep 2 && hypridle")
 
@@ -66,8 +67,8 @@ hl.config({
         col = {
             active_border = {
                 colors = {
-                    "rgba(33ccffee)",
-                    "rgba(00ff99ee)",
+                    "rgba(cba6f7ee)",
+                    "rgba(89b4faee)",
                 },
                 angle = 45,
             },
@@ -105,19 +106,21 @@ blur = {
 
     animations = {
 
-        enabled = false,
+        enabled = true,
 
         bezier = {
-            "fast, 0.05, 0.9, 0.1, 1.05",
+            "snap, 0.05, 0.9, 0.1, 1.0",
+            "smooth, 0.25, 1.0, 0.5, 1.0",
+            "overshoot, 0.34, 1.35, 0.6, 1.0",
         },
 
 
         animation = {
-            "windows, 1, 3, fast",
-            "windowsOut, 1, 3, default, popin 80%",
-            "border, 1, 4, default",
-            "fade, 1, 3, default",
-            "workspaces, 1, 3, fast",
+            "windows, 1, 2.5, overshoot, popin 90%",
+            "windowsOut, 1, 2, smooth, popin 90%",
+            "border, 1, 3, smooth",
+            "fade, 1, 2, smooth",
+            "workspaces, 1, 2.5, snap, slide",
         },
     },
 
