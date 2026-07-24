@@ -103,11 +103,11 @@ hl.config({
 		},
 
 		animation = {
-			"windows, 1, 2.5, overshoot, popin 90%",
-			"windowsOut, 1, 2, smooth, popin 90%",
+			"windows, 1, 1.5, overshoot, popin 90%",
+			"windowsOut, 1, 1.25, smooth, popin 90%",
 			"border, 1, 3, smooth",
 			"fade, 1, 1.2, smooth",
-			"workspaces, 1, 1.5, snap, slide",
+			"workspaces, 1, 1, snap, slide",
 		},
 	},
 })
